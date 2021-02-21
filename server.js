@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 
 //db connect
 const db = require("./config/keys").mongoURL;
+const passport = require("passport");
 
 //connect to
 mongoose
@@ -21,7 +22,11 @@ mongoose
   .then(() => console.log("MongoDB Connect"))
   .catch((err) => console.log(err));
 
-app.get("/", (req, res) => res.send("hello"));
+// Passport middleware
+app.use(passport.initialize());
+
+// Passport Config
+require("./config/passport")(passport);
 
 //use routes
 app.use("/api/users", users);
