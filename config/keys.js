@@ -1,5 +1,5 @@
-module.exports = {
-  mongoURL:
-    "mongodb+srv://trivan:trivan@cluster0.zqwh0.mongodb.net/nodejs-app?retryWrites=true&w=majority",
-  secretOrKey: "secret",
-};
+if (process.env.NODE_ENV === 'production') {
+  module.exports = require('./keys_prod');
+} else {
+  module.exports = require('./keys_dev');
+}

@@ -1,6 +1,5 @@
-import React from "react";
+import React from 'react';
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
   return (
     <footer className="bg-dark text-white mt-5 p-4 text-center">
